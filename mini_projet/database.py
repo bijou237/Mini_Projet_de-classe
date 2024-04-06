@@ -1,11 +1,11 @@
-import mysql.connector
+import mysql.connector as mysql
 
 class Connexion:
     def __init__(self, host, user, password, database):
         self.host = host
         self.user = user
         self.password = password
-        self.database = database
+        self.database = "ecole"
         self.connexion = None
 
     def connect(self):
