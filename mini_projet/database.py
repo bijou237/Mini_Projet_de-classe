@@ -17,7 +17,7 @@ class Connexion:
                 database=self.database
             )
             print("Connexion à la base de données réussie")
-        except mysql.connector.Error as e:
+        except mysql.connect.Error as e:
             print(f"Erreur lors de la connexion à la base de données : {e}")
 
     def disconnect(self):
