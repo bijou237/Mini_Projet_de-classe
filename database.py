@@ -2,22 +2,23 @@ import mysql.connector as mysql
 
 class Connexion:
     def __init__(self, host, user, password, database):
-        self.host = host
-        self.user = user
-        self.password = password
+        self.host = "host"
+        self.user = "root"
+        self.password = " "
         self.database = "ecole"
-        self.connexion = None
+
+    cursor= connexion.cursor()
 
     def connect(self):
         try:
-            self.connexion = mysql.connector.connect(
+            self.connexion = mysql.connect(
                 host=self.host,
                 user=self.user,
                 password=self.password,
                 database=self.database
             )
             print("Connexion à la base de données réussie")
-        except mysql.connect.Error as e:
+        except mysql.Error as e:
             print(f"Erreur lors de la connexion à la base de données : {e}")
 
     def disconnect(self):
@@ -27,12 +28,12 @@ class Connexion:
 
     def execute_query(self, query):
         try:
-            cursor = self.connexion.cursor()
+            cursor =self.connect.cursor()
             cursor.execute(query)
             self.connexion.commit()
             print("Requête exécutée avec succès")
             cursor.close()
-        except mysql.connector.Error as e:
+        except mysql.Error as e:
             print(f"Erreur lors de l'exécution de la requête : {e}")
 
 # Utilisation de la classe Connexion pour se connecter à la base de données
@@ -45,3 +46,5 @@ connexion.execute_query(query)
 
 # Déconnexion de la base de données
 connexion.disconnect()
+
+

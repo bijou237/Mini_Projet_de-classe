@@ -1,7 +1,7 @@
 from database import Connexion
 
 class FileAttenteDAO:
-    @staticmethod
+    @classmethod
     def sauvegarder_attente(attente):
         try:
             connexion = Connexion(host="localhost", user="utilisateur", password="mot_de_passe", database="nom_de_la_base")
@@ -14,7 +14,7 @@ class FileAttenteDAO:
         except Exception as e:
             print(f"Erreur lors de la sauvegarde de la file d'attente : {e}")
 
-    @staticmethod
+    @classmethod
     def recuperer_attente():
         try:
             connexion = Connexion(host="localhost", user="utilisateur", password="mot_de_passe", database="nom_de_la_base")

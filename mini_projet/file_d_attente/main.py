@@ -1,6 +1,9 @@
 # Import des classes nécessaires
+
+
 from file_d_attente.file_d_attente_dao import FileAttenteDAO
 from file_d_attente.file_d_attente import FileAttente
+
 
 # Création d'une instance de FileAttente
 file_attente = FileAttente()

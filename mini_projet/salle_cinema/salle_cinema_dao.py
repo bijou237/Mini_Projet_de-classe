@@ -1,7 +1,7 @@
 from database import Connexion
 
 class SalleCinemaDAO:
-    @staticmethod
+    @classmethod
     def sauvegarder_reservation(nom, place):
         try:
             connexion = Connexion(host="localhost", user="utilisateur", password="mot_de_passe", database="nom_de_la_base")
@@ -13,7 +13,7 @@ class SalleCinemaDAO:
         except Exception as e:
             print(f"Erreur lors de la sauvegarde de la réservation : {e}")
 
-    @staticmethod
+    @classmethod
     def recuperer_reservations():
         try:
             connexion = Connexion(host="localhost", user="utilisateur", password="mot_de_passe", database="nom_de_la_base")

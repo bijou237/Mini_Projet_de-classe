@@ -1,7 +1,7 @@
 from database import Connexion
 
 class ListePersonnesDAO:
-    @staticmethod
+    @classmethod
     def sauvegarder_personne(personne):
         try:
             connexion = Connexion(host="localhost", user="utilisateur", password="mot_de_passe", database="nom_de_la_base")
@@ -13,7 +13,7 @@ class ListePersonnesDAO:
         except Exception as e:
             print(f"Erreur lors de la sauvegarde de la personne : {e}")
 
-    @staticmethod
+    @classmethod
     def recuperer_personne(nom):
         try:
             connexion = Connexion(host="localhost", user="utilisateur", password="mot_de_passe", database="nom_de_la_base")
