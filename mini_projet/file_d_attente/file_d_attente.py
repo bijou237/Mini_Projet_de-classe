@@ -24,7 +24,7 @@ class FileAttenteDAO:
                 connexion.execute_query(query)
             connexion.disconnect()
             print("File d'attente sauvegardée avec succès")
-        except Exception as e:
+        except Exception as error:
             print(f"Erreur lors de la sauvegarde de la file d'attente : {e}")
 
     @staticmethod
@@ -40,6 +40,6 @@ class FileAttenteDAO:
             connexion.disconnect()
             print("File d'attente récupérée avec succès")
             return attente
-        except Exception as e:
+        except Exception as error:
             print(f"Erreur lors de la récupération de la file d'attente : {e}")
             return []

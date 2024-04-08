@@ -66,7 +66,7 @@ class ListePersonnesDAO:
             else:
                 print("Personne non trouvée dans la base de données.")
                 return None
-        except mysql.connector.Error as e:
+        except connexion as error:
             print(f"Erreur lors de la récupération de la personne : {e}")
             return None
         finally:

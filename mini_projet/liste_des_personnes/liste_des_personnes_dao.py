@@ -31,6 +31,6 @@ class ListePersonnesDAO:
             else:
                 print("Personne non trouvée")
                 return None
-        except Exception as e:
+        except Exception as error:
             print(f"Erreur lors de la récupération de la personne : {e}")
             return None

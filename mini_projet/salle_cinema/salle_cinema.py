@@ -12,7 +12,7 @@ class SalleCinema:
             print(f"Nom: {nom}, Place: {place}")
 
 class SalleCinemaDAO:
-    @staticmethod
+    @classmethod
     def sauvegarder_reservation(nom, place):
         try:
             connexion = Connexion(host="localhost", user="utilisateur", password="mot_de_passe", database="nom_de_la_base")
@@ -21,10 +21,10 @@ class SalleCinemaDAO:
             connexion.execute_query(query)
             connexion.disconnect()
             print("Réservation sauvegardée avec succès")
-        except Exception as e:
+        except Exception as error:
             print(f"Erreur lors de la sauvegarde de la réservation : {e}")
 
-    @staticmethod
+    @classmethod
     def recuperer_reservations():
         try:
             connexion = Connexion(host="localhost", user="utilisateur", password="mot_de_passe", database="nom_de_la_base")
