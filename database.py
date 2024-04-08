@@ -7,7 +7,7 @@ class Connexion:
         self.password = " "
         self.database = "ecole"
 
-    cursor= connexion.cursor()
+    cursor = connexion.cursor()
 
     def connect(self):
         try:
@@ -18,7 +18,7 @@ class Connexion:
                 database=self.database
             )
             print("Connexion à la base de données réussie")
-        except mysql.Error as e:
+        except Exception as error:
             print(f"Erreur lors de la connexion à la base de données : {e}")
 
     def disconnect(self):

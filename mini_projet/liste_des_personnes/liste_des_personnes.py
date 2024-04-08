@@ -1,7 +1,7 @@
-import mysql.connector
+import mysql.connector as mysql
 
 class ListePersonnesDAO:
-    @staticmethod
+    @classmethod
     def sauvegarder_personne(personne):
         # Connexion à la base de données MySQL
         connexion = mysql.connector.connect(
@@ -36,7 +36,7 @@ class ListePersonnesDAO:
                 cursor.close()
             connexion.close()
 
-    @staticmethod
+    @classmethod
     def recuperer_personne(nom):
         # Connexion à la base de données MySQL
         connexion = mysql.connector.connect(

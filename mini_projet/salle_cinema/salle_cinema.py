@@ -37,6 +37,6 @@ class SalleCinemaDAO:
             connexion.disconnect()
             print("Réservations récupérées avec succès")
             return reservations
-        except Exception as e:
+        except Exception as error:
             print(f"Erreur lors de la récupération des réservations : {e}")
             return []
